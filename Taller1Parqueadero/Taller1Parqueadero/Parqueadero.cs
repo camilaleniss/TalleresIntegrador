@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Taller1Parqueadero
 {
-    static class Program
+    static class Parqueadero
     {
         /// <summary>
         /// Punto de entrada principal para la aplicación.
@@ -16,7 +16,7 @@ namespace Taller1Parqueadero
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MainWindow());
         }
     }
 }
