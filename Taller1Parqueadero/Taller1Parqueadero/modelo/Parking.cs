@@ -51,17 +51,17 @@ namespace Taller1Parqueadero.modelo
 
         public void enterVehicle(Boolean belongs, String placa)
         {
-
+            //Método que añade un vehiculo al parqueadero
         }
 
         public void removeVehicle(String placa)
         {
-
+            //Método que retira un vehiculo del parqueadero
         }
 
         void removeVehicle(Vehicle vehicle)
         {
-
+            //Método auxiliar que retira un vehiculo del parqueadero
         }
 
         public String showUsers()
