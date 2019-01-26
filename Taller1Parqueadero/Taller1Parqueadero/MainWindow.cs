@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace Taller1Parqueadero
 {
@@ -15,6 +17,8 @@ namespace Taller1Parqueadero
         public MainWindow()
         {
             InitializeComponent();
+
+    
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
@@ -38,6 +42,16 @@ namespace Taller1Parqueadero
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void studentCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            codesComboBox.Enabled = studentCheckBox.Checked;
+        }
+
+        private void materialLabel5_Click(object sender, EventArgs e)
         {
 
         }
