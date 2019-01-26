@@ -5,8 +5,14 @@ C:\Users\camil\Documents\ICESI\Proyecto Integrador I\TalleresIntegrador\Talleres
 C:\Users\camil\Documents\ICESI\Proyecto Integrador I\TalleresIntegrador\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\obj\Debug\Taller1Parqueadero_MarkupCompile.cache
 C:\Users\camil\Documents\ICESI\Proyecto Integrador I\TalleresIntegrador\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\obj\Debug\Taller1Parqueadero_MarkupCompile.lref
 D:\Usuario\Documents\GitHub\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\obj\Debug\Taller1Parqueadero.csprojAssemblyReference.cache
-D:\Usuario\Documents\GitHub\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\obj\Debug\paneles\PanelParqueo.g.cs
-D:\Usuario\Documents\GitHub\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\obj\Debug\paneles\PanelVehicle.g.cs
-D:\Usuario\Documents\GitHub\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\obj\Debug\paneles\PanelRegistro.g.cs
-D:\Usuario\Documents\GitHub\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\obj\Debug\Taller1Parqueadero_MarkupCompile.cache
-D:\Usuario\Documents\GitHub\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\obj\Debug\Taller1Parqueadero_MarkupCompile.lref
+D:\Usuario\Documents\GitHub\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\bin\Debug\Taller1Parqueadero.exe.config
+D:\Usuario\Documents\GitHub\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\bin\Debug\Taller1Parqueadero.exe
+D:\Usuario\Documents\GitHub\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\bin\Debug\Taller1Parqueadero.pdb
+D:\Usuario\Documents\GitHub\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\bin\Debug\MaterialSkin.dll
+D:\Usuario\Documents\GitHub\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\obj\Debug\Taller1Parqueadero.MainWindow.resources
+D:\Usuario\Documents\GitHub\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\obj\Debug\Taller1Parqueadero.Properties.Resources.resources
+D:\Usuario\Documents\GitHub\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\obj\Debug\Taller1Parqueadero.csproj.GenerateResource.cache
+D:\Usuario\Documents\GitHub\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\obj\Debug\Taller1Parqueadero.csproj.CoreCompileInputs.cache
+D:\Usuario\Documents\GitHub\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\obj\Debug\Taller1Parqueadero.csproj.CopyComplete
+D:\Usuario\Documents\GitHub\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\obj\Debug\Taller1Parqueadero.exe
+D:\Usuario\Documents\GitHub\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\obj\Debug\Taller1Parqueadero.pdb
