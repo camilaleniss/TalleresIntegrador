@@ -10,17 +10,17 @@ namespace Taller1Parqueadero.Model
     {
 
         private Boolean belongsToIcesi;
-        private String placa;
+        private String plate;
 
-        public Vehicle (Boolean belongsIcesi, String placa)
+        public Vehicle (Boolean belongsIcesi, String plate)
         {
             this.belongsToIcesi = belongsIcesi;
-            this.placa = placa;
+            this.plate = plate;
 
         }
 
         //Getter and setter 
-        public string Placa { get => placa; set => placa = value; }
+        public string Plate { get => plate; set => plate = value; }
         public bool BelongsToIcesi { get => belongsToIcesi; set => belongsToIcesi = value; }
     }
 }

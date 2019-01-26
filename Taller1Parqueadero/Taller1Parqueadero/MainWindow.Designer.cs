@@ -48,6 +48,7 @@
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.plateComboBox = new System.Windows.Forms.ComboBox();
             this.availableLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -193,6 +194,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.materialListView1);
             this.groupBox3.Controls.Add(this.availableLabel);
             this.groupBox3.Location = new System.Drawing.Point(425, 51);
             this.groupBox3.Name = "groupBox3";
@@ -320,6 +322,23 @@
             this.availableLabel.Text = "Cupos: ";
             this.availableLabel.Click += new System.EventHandler(this.materialLabel5_Click);
             // 
+            // materialListView1
+            // 
+            this.materialListView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialListView1.Depth = 0;
+            this.materialListView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.materialListView1.FullRowSelect = true;
+            this.materialListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.materialListView1.Location = new System.Drawing.Point(10, 42);
+            this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListView1.Name = "materialListView1";
+            this.materialListView1.OwnerDraw = true;
+            this.materialListView1.Size = new System.Drawing.Size(184, 339);
+            this.materialListView1.TabIndex = 7;
+            this.materialListView1.UseCompatibleStateImageBehavior = false;
+            this.materialListView1.View = System.Windows.Forms.View.Details;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -367,6 +386,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private System.Windows.Forms.ComboBox plateComboBox;
         private MaterialSkin.Controls.MaterialLabel availableLabel;
+        private MaterialSkin.Controls.MaterialListView materialListView1;
     }
 }
 

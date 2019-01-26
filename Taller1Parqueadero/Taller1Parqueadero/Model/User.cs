@@ -8,10 +8,10 @@ namespace Taller1Parqueadero.Model
 {
     public class User
     {
-        private int cod;
-        private String name;
+        private string cod;
+        private string name;
 
-        public User(int cod, String name)
+        public User(string cod, String name)
         {
             this.cod = cod;
             this.name = name;
@@ -21,9 +21,12 @@ namespace Taller1Parqueadero.Model
         //Getter and setter 
         public string Name { get => name; set => name = value; }
 
-        public int Cod { get => cod; set => cod = value; }
+        public string Cod { get => cod; set => cod = value; }
 
-
+        public override string ToString()
+        {
+            return cod+"&"+name;
+        }
 
     }
 }

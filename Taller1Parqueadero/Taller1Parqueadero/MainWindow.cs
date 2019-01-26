@@ -9,15 +9,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using Taller1Parqueadero.Model;
 
 namespace Taller1Parqueadero
 {
     public partial class MainWindow : Form
     {
+
+        private Parking parking;
+
         public MainWindow()
         {
             InitializeComponent();
 
+            parking = new Parking();
     
         }
 

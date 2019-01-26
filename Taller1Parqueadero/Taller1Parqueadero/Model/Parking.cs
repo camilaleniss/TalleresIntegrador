@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,56 +11,95 @@ namespace Taller1Parqueadero.Model
     {
 
         public const int CAPACITY = 100;
+        public const string USERS_LOCATION = "..\\..\\users.txt";
 
-        private LinkedList<User> users;
-        private LinkedList<Vehicle> currentVehicles;
+        public LinkedList<User> Users { get; private set; }
+        public LinkedList<Vehicle> CurrentVehicles { get; private set; }
+        private Dictionary<string, Vehicle> vehiclesMap;
         private int availableSpace;
 
-        Parking()
+        public Parking()
         {
-            users = new LinkedList<User>();
-            //Deberia llamarse al método uploadUsers
-            currentVehicles = new LinkedList<Vehicle>();
+            Users = new LinkedList<User>();
+            vehiclesMap = new Dictionary<string, Vehicle>();
+            LoadUsers();
+            CurrentVehicles = new LinkedList<Vehicle>();
             availableSpace = CAPACITY;
         }
 
-        void AddUser (int cod, String name)
+        void AddUser(string cod, string name)
         {
             User user = new User(cod, name);
-            users.AddLast(user);
+            Users.AddLast(user);
         }
 
-        void reduceSpace()
+        void ReduceSpace()
         {
             --availableSpace;
         }
 
-        void increaseSpace()
+        void IncreaseSpace()
         {
             ++availableSpace;
         }
 
-        public void saveUsers()
+        public void SaveUsers()
         {
-            //Aqui deberia ir el método que crea el archivo de texto de los usuarios
+            try
+            {
+                StreamWriter sw = new StreamWriter(USERS_LOCATION, true);
+
+                foreach (User user in Users)
+                {
+                    sw.WriteLine(user.ToString());
+                }
+
+                sw.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception: " + e.Message);
+            }
         }
 
-        void uploadUsers()
+        public void LoadUsers()
         {
-            //Aqui deberia ir el método que carga el archivo de texto
+            if (File.Exists(USERS_LOCATION))
+            {
+                string line;
+                try
+                {
+                    StreamReader sr = new StreamReader(USERS_LOCATION);
+
+                    line = "";
+
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        string[] information = line.Split('&');
+                        AddUser(information[0], information[1]);
+                    }
+
+                    sr.Close();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Exception: " + e.Message);
+                }
+            }
         }
 
-        public void enterVehicle(Boolean belongs, String placa)
+        public void EnterVehicle(Boolean belongs, String placa)
         {
             //Método que añade un vehiculo al parqueadero
         }
 
-        public void removeVehicle(String placa)
+        public void RemoveVehicle(String plate)
         {
-            //Método que retira un vehiculo del parqueadero
+            Vehicle vehicle = vehiclesMap[plate];
+            if (vehicle != null) { RemoveVehicle(vehicle); }
         }
 
-        void removeVehicle(Vehicle vehicle)
+        void RemoveVehicle(Vehicle vehicle)
         {
             //Método auxiliar que retira un vehiculo del parqueadero
         }
