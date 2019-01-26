@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Taller1Parqueadero.modelo
+namespace Taller1Parqueadero.Model
 {
     class Parking
     {

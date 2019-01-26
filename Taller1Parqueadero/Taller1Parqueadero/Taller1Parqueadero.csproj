@@ -56,9 +56,9 @@
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="modelo\Parking.cs" />
-    <Compile Include="modelo\User.cs" />
-    <Compile Include="modelo\Vehicle.cs" />
+    <Compile Include="Model\Parking.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\Vehicle.cs" />
     <Compile Include="paneles\PanelParqueo.xaml.cs">
       <DependentUpon>PanelParqueo.xaml</DependentUpon>
     </Compile>
