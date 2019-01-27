@@ -342,6 +342,7 @@
             this.plateComboBox.Location = new System.Drawing.Point(6, 39);
             this.plateComboBox.Name = "plateComboBox";
             this.plateComboBox.Size = new System.Drawing.Size(187, 21);
+            this.plateComboBox.Sorted = true;
             this.plateComboBox.TabIndex = 1;
             // 
             // MainWindow

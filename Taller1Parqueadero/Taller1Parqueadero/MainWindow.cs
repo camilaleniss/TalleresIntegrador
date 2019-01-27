@@ -100,6 +100,28 @@ namespace Taller1Parqueadero
                 codesComboBox.SelectedIndex = 0;
             }
             codesComboBox.Enabled = studentCheckBox.Checked;
+
+            LinkedList<Vehicle> vehicles = parking.CurrentVehicles;
+            plateComboBox.Items.Clear();
+            if (vehicles.Count == 0)
+            {
+                plateComboBox.Enabled = false;
+                removeVehicleButton.Enabled = false;
+            }
+            else
+            {
+                plateComboBox.Enabled = true;
+                removeVehicleButton.Enabled = true;
+                foreach (Vehicle v in vehicles)
+                {
+                    plateComboBox.Items.Add(v.Plate);
+                }
+                plateComboBox.SelectedIndex = 0;
+            }
+
+            availableLabel.Text = "Cupos: " + parking.AvailableSpace;
+
         }
+
     }
 }

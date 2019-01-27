@@ -22,5 +22,11 @@ namespace Taller1Parqueadero.Model
         //Getter and setter 
         public string Plate { get => plate; set => plate = value; }
         public bool BelongsToIcesi { get => belongsToIcesi; set => belongsToIcesi = value; }
+
+        public override string ToString()
+        {
+            string belongs = belongsToIcesi ? "pertenece a Icesi" : "no pertenece a Icesi";
+            return plate + " , " + belongs;
+        }
     }
 }

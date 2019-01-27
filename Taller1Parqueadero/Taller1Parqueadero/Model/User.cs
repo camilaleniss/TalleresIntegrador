@@ -25,7 +25,7 @@ namespace Taller1Parqueadero.Model
 
         public override string ToString()
         {
-            return name + " - " + cod;
+            return cod + " - " + name;
         }
 
     }

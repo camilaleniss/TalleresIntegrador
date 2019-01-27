@@ -16,7 +16,7 @@ namespace Taller1Parqueadero.Model
         public LinkedList<User> Users { get; private set; }
         public LinkedList<Vehicle> CurrentVehicles { get; private set; }
         private Dictionary<string, Vehicle> vehiclesMap;
-        private int availableSpace;
+        public int AvailableSpace { get; private set; };
 
         public Parking()
         {
@@ -24,7 +24,7 @@ namespace Taller1Parqueadero.Model
             vehiclesMap = new Dictionary<string, Vehicle>();
             LoadUsers();
             CurrentVehicles = new LinkedList<Vehicle>();
-            availableSpace = CAPACITY;
+            AvailableSpace = CAPACITY;
         }
 
         public void AddUser(string cod, string name)
@@ -36,12 +36,12 @@ namespace Taller1Parqueadero.Model
 
         public void ReduceSpace()
         {
-            --availableSpace;
+            --AvailableSpace;
         }
 
         public void IncreaseSpace()
         {
-            ++availableSpace;
+            ++AvailableSpace;
         }
 
         public void SaveUser(User user)
@@ -88,7 +88,7 @@ namespace Taller1Parqueadero.Model
         public bool EnterVehicle(bool belongs, string plate)
         {
             bool success = false;
-            if (availableSpace > 0)
+            if (AvailableSpace > 0)
             {
                 Vehicle vehicle = new Vehicle(belongs, plate);
                 vehiclesMap[plate] = vehicle;
