@@ -23,7 +23,9 @@ namespace Taller1Parqueadero
             InitializeComponent();
 
             parking = new Parking();
-    
+
+            UpdateUI();
+
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
@@ -59,6 +61,29 @@ namespace Taller1Parqueadero
         private void materialLabel5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void registerButton_Click(object sender, EventArgs e)
+        {
+            string name = nameTextField.Text;
+            string code = codeTextField.Text;
+
+            if (name != "" && code != "")
+            {
+                parking.AddUser(code, name);
+            }
+            else
+            {
+                MessageBox.Show("Debes ingresar todos los datos", "Error",
+    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            UpdateUI();
+        }
+
+        private void UpdateUI()
+        {
+            
         }
     }
 }

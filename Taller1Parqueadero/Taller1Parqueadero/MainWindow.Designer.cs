@@ -37,18 +37,18 @@
             this.nameTextField = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.enterVehicleButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.plateTextField = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.codesComboBox = new System.Windows.Forms.ComboBox();
             this.studentCheckBox = new MaterialSkin.Controls.MaterialCheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.codesComboBox = new System.Windows.Forms.ComboBox();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.plateTextField = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.enterVehicleButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.vehiclesListView = new MaterialSkin.Controls.MaterialListView();
+            this.availableLabel = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.removeVehicleButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.plateComboBox = new System.Windows.Forms.ComboBox();
-            this.availableLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -58,12 +58,12 @@
             // titleLabel
             // 
             this.titleLabel.Depth = 0;
-            this.titleLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.titleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.titleLabel.Location = new System.Drawing.Point(12, 9);
             this.titleLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(776, 38);
+            this.titleLabel.Size = new System.Drawing.Size(613, 38);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "Parqueadero Icesi";
             this.titleLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -98,6 +98,7 @@
             this.registerButton.TabIndex = 4;
             this.registerButton.Text = "agregar";
             this.registerButton.UseVisualStyleBackColor = true;
+            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
             // 
             // codeTextField
             // 
@@ -175,56 +176,20 @@
             this.groupBox2.Text = "Ingresar vehículo";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // studentCheckBox
+            // enterVehicleButton
             // 
-            this.studentCheckBox.AutoSize = true;
-            this.studentCheckBox.Depth = 0;
-            this.studentCheckBox.Font = new System.Drawing.Font("Roboto", 10F);
-            this.studentCheckBox.Location = new System.Drawing.Point(7, 20);
-            this.studentCheckBox.Margin = new System.Windows.Forms.Padding(0);
-            this.studentCheckBox.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.studentCheckBox.MouseState = MaterialSkin.MouseState.HOVER;
-            this.studentCheckBox.Name = "studentCheckBox";
-            this.studentCheckBox.Ripple = true;
-            this.studentCheckBox.Size = new System.Drawing.Size(126, 30);
-            this.studentCheckBox.TabIndex = 0;
-            this.studentCheckBox.Text = "¿Es estudiante?";
-            this.studentCheckBox.UseVisualStyleBackColor = true;
-            this.studentCheckBox.CheckedChanged += new System.EventHandler(this.studentCheckBox_CheckedChanged);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.materialListView1);
-            this.groupBox3.Controls.Add(this.availableLabel);
-            this.groupBox3.Location = new System.Drawing.Point(425, 51);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(200, 387);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Vehículos";
-            // 
-            // codesComboBox
-            // 
-            this.codesComboBox.Enabled = false;
-            this.codesComboBox.FormattingEnabled = true;
-            this.codesComboBox.IntegralHeight = false;
-            this.codesComboBox.Location = new System.Drawing.Point(7, 54);
-            this.codesComboBox.Name = "codesComboBox";
-            this.codesComboBox.Size = new System.Drawing.Size(187, 21);
-            this.codesComboBox.TabIndex = 1;
-            // 
-            // materialLabel3
-            // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(6, 78);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(46, 19);
-            this.materialLabel3.TabIndex = 5;
-            this.materialLabel3.Text = "Placa";
+            this.enterVehicleButton.AutoSize = true;
+            this.enterVehicleButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.enterVehicleButton.Depth = 0;
+            this.enterVehicleButton.Icon = null;
+            this.enterVehicleButton.Location = new System.Drawing.Point(10, 134);
+            this.enterVehicleButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.enterVehicleButton.Name = "enterVehicleButton";
+            this.enterVehicleButton.Primary = true;
+            this.enterVehicleButton.Size = new System.Drawing.Size(155, 36);
+            this.enterVehicleButton.TabIndex = 5;
+            this.enterVehicleButton.Text = "ingresar vehículo";
+            this.enterVehicleButton.UseVisualStyleBackColor = true;
             // 
             // plateTextField
             // 
@@ -243,20 +208,89 @@
             this.plateTextField.TabStop = false;
             this.plateTextField.UseSystemPasswordChar = false;
             // 
-            // enterVehicleButton
+            // materialLabel3
             // 
-            this.enterVehicleButton.AutoSize = true;
-            this.enterVehicleButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.enterVehicleButton.Depth = 0;
-            this.enterVehicleButton.Icon = null;
-            this.enterVehicleButton.Location = new System.Drawing.Point(10, 134);
-            this.enterVehicleButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.enterVehicleButton.Name = "enterVehicleButton";
-            this.enterVehicleButton.Primary = true;
-            this.enterVehicleButton.Size = new System.Drawing.Size(155, 36);
-            this.enterVehicleButton.TabIndex = 5;
-            this.enterVehicleButton.Text = "ingresar vehículo";
-            this.enterVehicleButton.UseVisualStyleBackColor = true;
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(6, 78);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(46, 19);
+            this.materialLabel3.TabIndex = 5;
+            this.materialLabel3.Text = "Placa";
+            // 
+            // codesComboBox
+            // 
+            this.codesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.codesComboBox.FormattingEnabled = true;
+            this.codesComboBox.IntegralHeight = false;
+            this.codesComboBox.Location = new System.Drawing.Point(7, 54);
+            this.codesComboBox.Name = "codesComboBox";
+            this.codesComboBox.Size = new System.Drawing.Size(187, 21);
+            this.codesComboBox.TabIndex = 1;
+            // 
+            // studentCheckBox
+            // 
+            this.studentCheckBox.AutoSize = true;
+            this.studentCheckBox.Checked = true;
+            this.studentCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.studentCheckBox.Depth = 0;
+            this.studentCheckBox.Font = new System.Drawing.Font("Roboto", 10F);
+            this.studentCheckBox.Location = new System.Drawing.Point(7, 20);
+            this.studentCheckBox.Margin = new System.Windows.Forms.Padding(0);
+            this.studentCheckBox.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.studentCheckBox.MouseState = MaterialSkin.MouseState.HOVER;
+            this.studentCheckBox.Name = "studentCheckBox";
+            this.studentCheckBox.Ripple = true;
+            this.studentCheckBox.Size = new System.Drawing.Size(126, 30);
+            this.studentCheckBox.TabIndex = 0;
+            this.studentCheckBox.Text = "¿Es estudiante?";
+            this.studentCheckBox.UseVisualStyleBackColor = true;
+            this.studentCheckBox.CheckedChanged += new System.EventHandler(this.studentCheckBox_CheckedChanged);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.vehiclesListView);
+            this.groupBox3.Controls.Add(this.availableLabel);
+            this.groupBox3.Location = new System.Drawing.Point(425, 51);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(200, 387);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Vehículos";
+            // 
+            // vehiclesListView
+            // 
+            this.vehiclesListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.vehiclesListView.Depth = 0;
+            this.vehiclesListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.vehiclesListView.FullRowSelect = true;
+            this.vehiclesListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.vehiclesListView.Location = new System.Drawing.Point(10, 42);
+            this.vehiclesListView.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.vehiclesListView.MouseState = MaterialSkin.MouseState.OUT;
+            this.vehiclesListView.Name = "vehiclesListView";
+            this.vehiclesListView.OwnerDraw = true;
+            this.vehiclesListView.Size = new System.Drawing.Size(184, 339);
+            this.vehiclesListView.TabIndex = 7;
+            this.vehiclesListView.UseCompatibleStateImageBehavior = false;
+            this.vehiclesListView.View = System.Windows.Forms.View.Details;
+            // 
+            // availableLabel
+            // 
+            this.availableLabel.AutoSize = true;
+            this.availableLabel.Depth = 0;
+            this.availableLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.availableLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.availableLabel.Location = new System.Drawing.Point(6, 16);
+            this.availableLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.availableLabel.Name = "availableLabel";
+            this.availableLabel.Size = new System.Drawing.Size(60, 19);
+            this.availableLabel.TabIndex = 6;
+            this.availableLabel.Text = "Cupos: ";
+            this.availableLabel.Click += new System.EventHandler(this.materialLabel5_Click);
             // 
             // groupBox4
             // 
@@ -300,6 +334,7 @@
             // 
             // plateComboBox
             // 
+            this.plateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.plateComboBox.Enabled = false;
             this.plateComboBox.FormattingEnabled = true;
             this.plateComboBox.IntegralHeight = false;
@@ -308,49 +343,22 @@
             this.plateComboBox.Size = new System.Drawing.Size(187, 21);
             this.plateComboBox.TabIndex = 1;
             // 
-            // availableLabel
-            // 
-            this.availableLabel.AutoSize = true;
-            this.availableLabel.Depth = 0;
-            this.availableLabel.Font = new System.Drawing.Font("Roboto", 11F);
-            this.availableLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.availableLabel.Location = new System.Drawing.Point(6, 16);
-            this.availableLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.availableLabel.Name = "availableLabel";
-            this.availableLabel.Size = new System.Drawing.Size(60, 19);
-            this.availableLabel.TabIndex = 6;
-            this.availableLabel.Text = "Cupos: ";
-            this.availableLabel.Click += new System.EventHandler(this.materialLabel5_Click);
-            // 
-            // materialListView1
-            // 
-            this.materialListView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialListView1.Depth = 0;
-            this.materialListView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.materialListView1.FullRowSelect = true;
-            this.materialListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.materialListView1.Location = new System.Drawing.Point(10, 42);
-            this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialListView1.Name = "materialListView1";
-            this.materialListView1.OwnerDraw = true;
-            this.materialListView1.Size = new System.Drawing.Size(184, 339);
-            this.materialListView1.TabIndex = 7;
-            this.materialListView1.UseCompatibleStateImageBehavior = false;
-            this.materialListView1.View = System.Windows.Forms.View.Details;
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(634, 441);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.titleLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MainWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Parqueadero Icesi";
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.groupBox1.ResumeLayout(false);
@@ -386,7 +394,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private System.Windows.Forms.ComboBox plateComboBox;
         private MaterialSkin.Controls.MaterialLabel availableLabel;
-        private MaterialSkin.Controls.MaterialListView materialListView1;
+        private MaterialSkin.Controls.MaterialListView vehiclesListView;
     }
 }
 

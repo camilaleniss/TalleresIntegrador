@@ -27,32 +27,29 @@ namespace Taller1Parqueadero.Model
             availableSpace = CAPACITY;
         }
 
-        void AddUser(string cod, string name)
+        public void AddUser(string cod, string name)
         {
             User user = new User(cod, name);
             Users.AddLast(user);
+            SaveUser(user);
         }
 
-        void ReduceSpace()
+        public void ReduceSpace()
         {
             --availableSpace;
         }
 
-        void IncreaseSpace()
+        public void IncreaseSpace()
         {
             ++availableSpace;
         }
 
-        public void SaveUsers()
+        public void SaveUser(User user)
         {
             try
             {
                 StreamWriter sw = new StreamWriter(USERS_LOCATION, true);
-
-                foreach (User user in Users)
-                {
-                    sw.WriteLine(user.ToString());
-                }
+                sw.WriteLine(user.ToString());
 
                 sw.Close();
             }
@@ -88,12 +85,22 @@ namespace Taller1Parqueadero.Model
             }
         }
 
-        public void EnterVehicle(Boolean belongs, String placa)
+        public bool EnterVehicle(bool belongs, string plate)
         {
-            //Método que añade un vehiculo al parqueadero
+            bool success = false;
+            if (availableSpace > 0)
+            {
+                Vehicle vehicle = new Vehicle(belongs, plate);
+                vehiclesMap[plate] = vehicle;
+                CurrentVehicles.AddLast(vehicle);
+                success = true;
+                IncreaseSpace();
+            }
+
+            return success;
         }
 
-        public void RemoveVehicle(String plate)
+        public void RemoveVehicle(string plate)
         {
             Vehicle vehicle = vehiclesMap[plate];
             if (vehicle != null) { RemoveVehicle(vehicle); }
@@ -101,7 +108,9 @@ namespace Taller1Parqueadero.Model
 
         void RemoveVehicle(Vehicle vehicle)
         {
-            //Método auxiliar que retira un vehiculo del parqueadero
+            vehiclesMap.Remove(vehicle.Plate);
+            CurrentVehicles.Remove(vehicle);
+            ReduceSpace();
         }
 
         public String showUsers()
