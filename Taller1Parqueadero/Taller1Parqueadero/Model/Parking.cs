@@ -16,7 +16,7 @@ namespace Taller1Parqueadero.Model
         public LinkedList<User> Users { get; private set; }
         public LinkedList<Vehicle> CurrentVehicles { get; private set; }
         private Dictionary<string, Vehicle> vehiclesMap;
-        public int AvailableSpace { get; private set; };
+        public int AvailableSpace { get; private set; }
 
         public Parking()
         {
