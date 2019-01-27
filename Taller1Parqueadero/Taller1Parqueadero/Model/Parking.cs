@@ -49,7 +49,7 @@ namespace Taller1Parqueadero.Model
             try
             {
                 StreamWriter sw = new StreamWriter(USERS_LOCATION, true);
-                sw.WriteLine(user.ToString());
+                sw.WriteLine(user.Cod + "&" + user.Name);
 
                 sw.Close();
             }

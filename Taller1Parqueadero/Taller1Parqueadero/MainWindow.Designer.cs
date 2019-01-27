@@ -229,6 +229,7 @@
             this.codesComboBox.Location = new System.Drawing.Point(7, 54);
             this.codesComboBox.Name = "codesComboBox";
             this.codesComboBox.Size = new System.Drawing.Size(187, 21);
+            this.codesComboBox.Sorted = true;
             this.codesComboBox.TabIndex = 1;
             // 
             // studentCheckBox
@@ -244,9 +245,9 @@
             this.studentCheckBox.MouseState = MaterialSkin.MouseState.HOVER;
             this.studentCheckBox.Name = "studentCheckBox";
             this.studentCheckBox.Ripple = true;
-            this.studentCheckBox.Size = new System.Drawing.Size(126, 30);
+            this.studentCheckBox.Size = new System.Drawing.Size(108, 30);
             this.studentCheckBox.TabIndex = 0;
-            this.studentCheckBox.Text = "¿Es estudiante?";
+            this.studentCheckBox.Text = "¿Es usuario?";
             this.studentCheckBox.UseVisualStyleBackColor = true;
             this.studentCheckBox.CheckedChanged += new System.EventHandler(this.studentCheckBox_CheckedChanged);
             // 

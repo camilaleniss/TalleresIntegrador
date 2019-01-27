@@ -55,7 +55,7 @@ namespace Taller1Parqueadero
 
         private void studentCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            codesComboBox.Enabled = studentCheckBox.Checked;
+            UpdateUI();
         }
 
         private void materialLabel5_Click(object sender, EventArgs e)
@@ -83,7 +83,23 @@ namespace Taller1Parqueadero
 
         private void UpdateUI()
         {
-            
+            LinkedList<User> users = parking.Users;
+            codesComboBox.Items.Clear();
+            if (users.Count == 0)
+            {
+                studentCheckBox.Enabled = false;
+                studentCheckBox.Checked = false;
+                
+            } else
+            {
+                studentCheckBox.Enabled = true;
+                foreach(User u in users)
+                {
+                    codesComboBox.Items.Add(u.ToString());
+                }
+                codesComboBox.SelectedIndex = 0;
+            }
+            codesComboBox.Enabled = studentCheckBox.Checked;
         }
     }
 }
