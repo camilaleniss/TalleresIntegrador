@@ -12,6 +12,7 @@ namespace Taller1Parqueadero.Model
 
         public const int CAPACITY = 100;
         public const string USERS_LOCATION = "..\\..\\users.txt";
+        public const string VEHICLES_LOCATION = "..\\..\\vehicles.txt";
 
         public LinkedList<User> Users { get; private set; }
         public LinkedList<Vehicle> CurrentVehicles { get; private set; }
@@ -20,9 +21,11 @@ namespace Taller1Parqueadero.Model
         public Parking()
         {
             Users = new LinkedList<User>();
-            LoadUsers();
             CurrentVehicles = new LinkedList<Vehicle>();
             AvailableSpace = CAPACITY;
+            LoadUsers();
+            LoadVehicles();
+            
         }
 
         public void AddUser(string cod, string name)
@@ -57,6 +60,24 @@ namespace Taller1Parqueadero.Model
             }
         }
 
+        public void SaveVehicles()
+        {
+            try
+            {
+                StreamWriter sw = new StreamWriter(VEHICLES_LOCATION, false);
+                foreach(Vehicle vehicle in CurrentVehicles)
+                {
+                    sw.WriteLine(vehicle.Owner + "&" + vehicle.Plate);
+                }
+                
+                sw.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception: " + e.Message);
+            }
+        }
+
         public void LoadUsers()
         {
             if (File.Exists(USERS_LOCATION))
@@ -83,6 +104,32 @@ namespace Taller1Parqueadero.Model
             }
         }
 
+        public void LoadVehicles()
+        {
+            if (File.Exists(VEHICLES_LOCATION))
+            {
+                string line;
+                try
+                {
+                    StreamReader sr = new StreamReader(VEHICLES_LOCATION);
+
+                    line = "";
+
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        string[] information = line.Split('&');
+                        EnterVehicle(new Vehicle(information[0], information[1]));
+                    }
+
+                    sr.Close();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Exception: " + e.Message);
+                }
+            }
+        }
+
         public bool EnterVehicle(User owner, string plate)
         {
             bool success = false;
@@ -94,12 +141,18 @@ namespace Taller1Parqueadero.Model
                     ownerString = owner.ToString() ;
                 }
                 Vehicle vehicle = new Vehicle(ownerString, plate);
-                CurrentVehicles.AddLast(vehicle);
+                EnterVehicle(vehicle);
                 success = true;
-                ReduceSpace();
             }
 
             return success;
+        }
+
+        public void EnterVehicle(Vehicle vehicle)
+        {
+            CurrentVehicles.AddLast(vehicle);           
+            ReduceSpace();
+            SaveVehicles();
         }
 
         public void RemoveVehicle(Vehicle vehicle)
