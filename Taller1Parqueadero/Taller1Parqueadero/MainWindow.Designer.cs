@@ -43,12 +43,12 @@
             this.codesComboBox = new System.Windows.Forms.ComboBox();
             this.studentCheckBox = new MaterialSkin.Controls.MaterialCheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.vehiclesListView = new MaterialSkin.Controls.MaterialListView();
             this.availableLabel = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.removeVehicleButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.plateComboBox = new System.Windows.Forms.ComboBox();
+            this.vehiclesListView = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -190,6 +190,7 @@
             this.enterVehicleButton.TabIndex = 5;
             this.enterVehicleButton.Text = "ingresar vehículo";
             this.enterVehicleButton.UseVisualStyleBackColor = true;
+            this.enterVehicleButton.Click += new System.EventHandler(this.enterVehicleButton_Click);
             // 
             // plateTextField
             // 
@@ -262,23 +263,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Vehículos";
             // 
-            // vehiclesListView
-            // 
-            this.vehiclesListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.vehiclesListView.Depth = 0;
-            this.vehiclesListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.vehiclesListView.FullRowSelect = true;
-            this.vehiclesListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.vehiclesListView.Location = new System.Drawing.Point(10, 42);
-            this.vehiclesListView.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.vehiclesListView.MouseState = MaterialSkin.MouseState.OUT;
-            this.vehiclesListView.Name = "vehiclesListView";
-            this.vehiclesListView.OwnerDraw = true;
-            this.vehiclesListView.Size = new System.Drawing.Size(184, 339);
-            this.vehiclesListView.TabIndex = 7;
-            this.vehiclesListView.UseCompatibleStateImageBehavior = false;
-            this.vehiclesListView.View = System.Windows.Forms.View.Details;
-            // 
             // availableLabel
             // 
             this.availableLabel.AutoSize = true;
@@ -319,6 +303,7 @@
             this.removeVehicleButton.TabIndex = 5;
             this.removeVehicleButton.Text = "retirar vehículo";
             this.removeVehicleButton.UseVisualStyleBackColor = true;
+            this.removeVehicleButton.Click += new System.EventHandler(this.removeVehicleButton_Click);
             // 
             // materialLabel4
             // 
@@ -329,9 +314,9 @@
             this.materialLabel4.Location = new System.Drawing.Point(6, 17);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(46, 19);
+            this.materialLabel4.Size = new System.Drawing.Size(68, 19);
             this.materialLabel4.TabIndex = 5;
-            this.materialLabel4.Text = "Placa";
+            this.materialLabel4.Text = "Vehículo";
             // 
             // plateComboBox
             // 
@@ -344,6 +329,17 @@
             this.plateComboBox.Size = new System.Drawing.Size(187, 21);
             this.plateComboBox.Sorted = true;
             this.plateComboBox.TabIndex = 1;
+            // 
+            // vehiclesListView
+            // 
+            this.vehiclesListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.vehiclesListView.FormattingEnabled = true;
+            this.vehiclesListView.HorizontalScrollbar = true;
+            this.vehiclesListView.Location = new System.Drawing.Point(7, 39);
+            this.vehiclesListView.Name = "vehiclesListView";
+            this.vehiclesListView.Size = new System.Drawing.Size(187, 342);
+            this.vehiclesListView.Sorted = true;
+            this.vehiclesListView.TabIndex = 7;
             // 
             // MainWindow
             // 
@@ -396,7 +392,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private System.Windows.Forms.ComboBox plateComboBox;
         private MaterialSkin.Controls.MaterialLabel availableLabel;
-        private MaterialSkin.Controls.MaterialListView vehiclesListView;
+        private System.Windows.Forms.ListBox vehiclesListView;
     }
 }
 

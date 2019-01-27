@@ -9,24 +9,26 @@ namespace Taller1Parqueadero.Model
     public class Vehicle
     {
 
-        private Boolean belongsToIcesi;
-        private String plate;
+        public const string NO_ICESI = "";
 
-        public Vehicle (Boolean belongsIcesi, String plate)
+        private string owner;
+        private string plate;
+
+        public Vehicle (string owner, string plate)
         {
-            this.belongsToIcesi = belongsIcesi;
+            this.owner = owner;
             this.plate = plate;
 
         }
 
         //Getter and setter 
         public string Plate { get => plate; set => plate = value; }
-        public bool BelongsToIcesi { get => belongsToIcesi; set => belongsToIcesi = value; }
+        public string Owner { get => owner; set => owner = value; }
 
         public override string ToString()
         {
-            string belongs = belongsToIcesi ? "pertenece a Icesi" : "no pertenece a Icesi";
-            return plate + " , " + belongs;
+            string belongs = owner != NO_ICESI ? "pertenece a "+owner : "no pertenece a Icesi";
+            return plate + ", " + belongs;
         }
     }
 }

@@ -15,13 +15,11 @@ namespace Taller1Parqueadero.Model
 
         public LinkedList<User> Users { get; private set; }
         public LinkedList<Vehicle> CurrentVehicles { get; private set; }
-        private Dictionary<string, Vehicle> vehiclesMap;
         public int AvailableSpace { get; private set; }
 
         public Parking()
         {
             Users = new LinkedList<User>();
-            vehiclesMap = new Dictionary<string, Vehicle>();
             LoadUsers();
             CurrentVehicles = new LinkedList<Vehicle>();
             AvailableSpace = CAPACITY;
@@ -85,32 +83,29 @@ namespace Taller1Parqueadero.Model
             }
         }
 
-        public bool EnterVehicle(bool belongs, string plate)
+        public bool EnterVehicle(User owner, string plate)
         {
             bool success = false;
             if (AvailableSpace > 0)
             {
-                Vehicle vehicle = new Vehicle(belongs, plate);
-                vehiclesMap[plate] = vehicle;
+                string ownerString = Vehicle.NO_ICESI;
+                if (owner != null)
+                {
+                    ownerString = owner.ToString() ;
+                }
+                Vehicle vehicle = new Vehicle(ownerString, plate);
                 CurrentVehicles.AddLast(vehicle);
                 success = true;
-                IncreaseSpace();
+                ReduceSpace();
             }
 
             return success;
         }
 
-        public void RemoveVehicle(string plate)
+        public void RemoveVehicle(Vehicle vehicle)
         {
-            Vehicle vehicle = vehiclesMap[plate];
-            if (vehicle != null) { RemoveVehicle(vehicle); }
-        }
-
-        void RemoveVehicle(Vehicle vehicle)
-        {
-            vehiclesMap.Remove(vehicle.Plate);
             CurrentVehicles.Remove(vehicle);
-            ReduceSpace();
+            IncreaseSpace();
         }
 
         public String showUsers()

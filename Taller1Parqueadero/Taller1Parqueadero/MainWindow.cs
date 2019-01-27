@@ -83,25 +83,37 @@ namespace Taller1Parqueadero
 
         private void UpdateUI()
         {
+            UpdateUsers();
+            UpdateVehicles();
+            availableLabel.Text = "Cupos: " + parking.AvailableSpace;
+        }
+
+        private void UpdateUsers()
+        {
             LinkedList<User> users = parking.Users;
             codesComboBox.Items.Clear();
             if (users.Count == 0)
             {
                 studentCheckBox.Enabled = false;
                 studentCheckBox.Checked = false;
-                
-            } else
+
+            }
+            else
             {
                 studentCheckBox.Enabled = true;
-                foreach(User u in users)
+                foreach (User u in users)
                 {
-                    codesComboBox.Items.Add(u.ToString());
+                    codesComboBox.Items.Add(u);
                 }
                 codesComboBox.SelectedIndex = 0;
             }
             codesComboBox.Enabled = studentCheckBox.Checked;
+        }
 
+        private void UpdateVehicles()
+        {
             LinkedList<Vehicle> vehicles = parking.CurrentVehicles;
+            vehiclesListView.Items.Clear();
             plateComboBox.Items.Clear();
             if (vehicles.Count == 0)
             {
@@ -114,14 +126,43 @@ namespace Taller1Parqueadero
                 removeVehicleButton.Enabled = true;
                 foreach (Vehicle v in vehicles)
                 {
-                    plateComboBox.Items.Add(v.Plate);
+                    vehiclesListView.Items.Add(v);
+                    plateComboBox.Items.Add(v);
                 }
+
+                
                 plateComboBox.SelectedIndex = 0;
             }
-
-            availableLabel.Text = "Cupos: " + parking.AvailableSpace;
-
         }
 
+        private void enterVehicleButton_Click(object sender, EventArgs e)
+        {
+            string plate = plateTextField.Text;
+            bool student = studentCheckBox.Checked;
+            if (plate != "")
+            {
+                User owner = null;
+                if(student)
+                {
+                    owner = (User)codesComboBox.SelectedItem;
+                }
+                parking.EnterVehicle(owner, plate);
+                UpdateUI();
+            }
+            else
+            {
+                MessageBox.Show("Debes ingresar la placa", "Error",
+    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void removeVehicleButton_Click(object sender, EventArgs e)
+        {
+            if (plateComboBox.Enabled)
+            {
+                parking.RemoveVehicle((Vehicle)plateComboBox.SelectedItem);
+                UpdateUI();
+            }
+        }
     }
 }
