@@ -159,6 +159,7 @@ namespace Taller1Parqueadero.Model
         {
             CurrentVehicles.Remove(vehicle);
             IncreaseSpace();
+            SaveVehicles();
         }
 
         public String showUsers()
