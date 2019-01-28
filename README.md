@@ -1,2 +1,7 @@
 # TalleresIntegrador
-Talleres realizados durante el curso de Proyecto Integrador I
+
+Taller #2 proyecto integrador
+Reto 4
+
+Maria Camila Lenis Restrepo
+Javier Andrés Torres Reyes
