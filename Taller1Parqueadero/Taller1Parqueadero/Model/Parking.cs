@@ -163,7 +163,28 @@ namespace Taller1Parqueadero.Model
 
         public String showUsers()
         {
-            return "Users";
+            String users = "Codigo  / Nombre"+"\n";
+            if (File.Exists(USERS_LOCATION))
+            {
+                try
+                {
+                    String line;
+                    StreamReader sr = new StreamReader(USERS_LOCATION);
+                    line = "";
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        string[] information = line.Split('&');
+                        users += (information[0] + " / " + information[1]+"\n");
+                    }
+
+                    sr.Close();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Exception: " + e.Message);
+                }
+            }
+            return users;
         }
 
     }

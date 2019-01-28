@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.titleLabel = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.registerButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.codeTextField = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
@@ -43,12 +44,12 @@
             this.codesComboBox = new System.Windows.Forms.ComboBox();
             this.studentCheckBox = new MaterialSkin.Controls.MaterialCheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.vehiclesListView = new System.Windows.Forms.ListBox();
             this.availableLabel = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.removeVehicleButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.plateComboBox = new System.Windows.Forms.ComboBox();
-            this.vehiclesListView = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -57,9 +58,10 @@
             // 
             // titleLabel
             // 
+            this.titleLabel.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.titleLabel.Depth = 0;
-            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.titleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.titleLabel.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.ForeColor = System.Drawing.Color.Navy;
             this.titleLabel.Location = new System.Drawing.Point(12, 9);
             this.titleLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.titleLabel.Name = "titleLabel";
@@ -71,6 +73,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox1.Controls.Add(this.materialRaisedButton1);
             this.groupBox1.Controls.Add(this.registerButton);
             this.groupBox1.Controls.Add(this.codeTextField);
             this.groupBox1.Controls.Add(this.materialLabel2);
@@ -83,6 +87,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registrar usuario";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // materialRaisedButton1
+            // 
+            this.materialRaisedButton1.AutoSize = true;
+            this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton1.Depth = 0;
+            this.materialRaisedButton1.Icon = null;
+            this.materialRaisedButton1.Location = new System.Drawing.Point(100, 134);
+            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton1.Name = "materialRaisedButton1";
+            this.materialRaisedButton1.Primary = true;
+            this.materialRaisedButton1.Size = new System.Drawing.Size(87, 36);
+            this.materialRaisedButton1.TabIndex = 5;
+            this.materialRaisedButton1.Text = "VER LISTA";
+            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
             // registerButton
             // 
@@ -163,6 +183,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox2.Controls.Add(this.enterVehicleButton);
             this.groupBox2.Controls.Add(this.plateTextField);
             this.groupBox2.Controls.Add(this.materialLabel3);
@@ -254,6 +275,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox3.Controls.Add(this.vehiclesListView);
             this.groupBox3.Controls.Add(this.availableLabel);
             this.groupBox3.Location = new System.Drawing.Point(425, 51);
@@ -262,6 +284,18 @@
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Vehículos";
+            // 
+            // vehiclesListView
+            // 
+            this.vehiclesListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.vehiclesListView.FormattingEnabled = true;
+            this.vehiclesListView.HorizontalScrollbar = true;
+            this.vehiclesListView.Location = new System.Drawing.Point(7, 39);
+            this.vehiclesListView.Name = "vehiclesListView";
+            this.vehiclesListView.Size = new System.Drawing.Size(187, 342);
+            this.vehiclesListView.Sorted = true;
+            this.vehiclesListView.TabIndex = 7;
+            this.vehiclesListView.SelectedIndexChanged += new System.EventHandler(this.vehiclesListView_SelectedIndexChanged);
             // 
             // availableLabel
             // 
@@ -279,6 +313,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox4.Controls.Add(this.removeVehicleButton);
             this.groupBox4.Controls.Add(this.materialLabel4);
             this.groupBox4.Controls.Add(this.plateComboBox);
@@ -330,22 +365,12 @@
             this.plateComboBox.Sorted = true;
             this.plateComboBox.TabIndex = 1;
             // 
-            // vehiclesListView
-            // 
-            this.vehiclesListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.vehiclesListView.FormattingEnabled = true;
-            this.vehiclesListView.HorizontalScrollbar = true;
-            this.vehiclesListView.Location = new System.Drawing.Point(7, 39);
-            this.vehiclesListView.Name = "vehiclesListView";
-            this.vehiclesListView.Size = new System.Drawing.Size(187, 342);
-            this.vehiclesListView.Sorted = true;
-            this.vehiclesListView.TabIndex = 7;
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(634, 441);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -393,6 +418,7 @@
         private System.Windows.Forms.ComboBox plateComboBox;
         private MaterialSkin.Controls.MaterialLabel availableLabel;
         private System.Windows.Forms.ListBox vehiclesListView;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
     }
 }
 

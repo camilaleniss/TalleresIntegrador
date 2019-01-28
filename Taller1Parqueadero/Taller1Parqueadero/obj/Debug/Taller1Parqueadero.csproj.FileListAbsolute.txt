@@ -16,3 +16,15 @@ D:\Usuario\Documents\GitHub\TalleresIntegrador\Taller1Parqueadero\Taller1Parquea
 D:\Usuario\Documents\GitHub\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\obj\Debug\Taller1Parqueadero.csproj.CopyComplete
 D:\Usuario\Documents\GitHub\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\obj\Debug\Taller1Parqueadero.exe
 D:\Usuario\Documents\GitHub\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\obj\Debug\Taller1Parqueadero.pdb
+C:\Users\camil\Documents\ICESI\Proyecto Integrador I\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\bin\Debug\Taller1Parqueadero.exe.config
+C:\Users\camil\Documents\ICESI\Proyecto Integrador I\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\bin\Debug\Taller1Parqueadero.exe
+C:\Users\camil\Documents\ICESI\Proyecto Integrador I\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\bin\Debug\Taller1Parqueadero.pdb
+C:\Users\camil\Documents\ICESI\Proyecto Integrador I\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\bin\Debug\MaterialSkin.dll
+C:\Users\camil\Documents\ICESI\Proyecto Integrador I\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\obj\Debug\Taller1Parqueadero.csprojAssemblyReference.cache
+C:\Users\camil\Documents\ICESI\Proyecto Integrador I\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\obj\Debug\Taller1Parqueadero.MainWindow.resources
+C:\Users\camil\Documents\ICESI\Proyecto Integrador I\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\obj\Debug\Taller1Parqueadero.Properties.Resources.resources
+C:\Users\camil\Documents\ICESI\Proyecto Integrador I\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\obj\Debug\Taller1Parqueadero.csproj.GenerateResource.cache
+C:\Users\camil\Documents\ICESI\Proyecto Integrador I\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\obj\Debug\Taller1Parqueadero.csproj.CoreCompileInputs.cache
+C:\Users\camil\Documents\ICESI\Proyecto Integrador I\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\obj\Debug\Taller1Parqueadero.csproj.CopyComplete
+C:\Users\camil\Documents\ICESI\Proyecto Integrador I\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\obj\Debug\Taller1Parqueadero.exe
+C:\Users\camil\Documents\ICESI\Proyecto Integrador I\TalleresIntegrador\Taller1Parqueadero\Taller1Parqueadero\obj\Debug\Taller1Parqueadero.pdb
